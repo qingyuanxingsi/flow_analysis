@@ -169,6 +169,8 @@ class FlowModel:
                 if process_tag % process_batch == 0:
                     print('Processed %d batch(%d)...' % (int(process_tag / process_batch), process_batch))
                 if 'TCP' in data:
+                    data.show()
+                    break
                     tcp = data['TCP']
                     dst_port = tcp.dport
                     pkt_bytes = bytes(data.payload.payload.payload)

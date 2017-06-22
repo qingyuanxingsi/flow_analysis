@@ -11,8 +11,8 @@ ID,Date,Start_Time,Destination,Score,Name
 10,03/09/1999,10:06:43,marx.eyrie.af.mil,1,back
 11,03/09/1999,10:54:19,zeno.eyrie.af.mil,1,loadmodule
 12,03/09/1999,11:49:13,pascal.eyrie.af.mil,1,secret
-13,03/09/1999,14:25:16,pascal.eyrie.af.mil,1,mailbomb
-14,03/09/1999,13:05:10,172.016.112.|001-114.254,1,ipsweep
+13,03/09/1999,13:05:10,172.016.112.|001-114.254,1,ipsweep
+14,03/09/1999,14:25:16,pascal.eyrie.af.mil,1,mailbomb
 15,03/09/1999,16:11:15,marx.eyrie.af.mil,1,phf
 16,03/09/1999,18:06:17,pascal.eyrie.af.mil,1,httptunnel
 17,03/10/1999,12:02:13,marx.eyrie.af.mil,1,satan
