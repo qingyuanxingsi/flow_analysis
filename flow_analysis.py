@@ -86,15 +86,19 @@ sid_start = 1000000
 msg = 'Anomalous'
 for key, sig_list in sig_dict.items():
     for sig in sig_list:
-        sig_str = ''
+        sig_list = []
         for s in sig:
             hex_s = hex(s)[2:]
             if len(hex_s) == 1:
                 hex_s += '0'
-            sig_str += hex_s
-        cur_rule = 'alert any any any -> any %d (content:\"%s\"; msg: \"%s\"; sid:%d)\n' % (key, sig_str, msg, sid_start)
+            sig_list.append(hex_s)
+        sig_str = '|'+''.join(sig_list)+'|'
+        tcp_rule = 'alert %s any any -> any %d (content:\"%s\"; msg: \"%s\"; sid:%d)\n' % ('tcp', key, sig_str, msg, sid_start)
         sid_start += 1
-        rule_file.writelines(cur_rule)
+        udp_rule = 'alert %s any any -> any %d (content:\"%s\"; msg: \"%s\"; sid:%d)\n' % ('udp', key, sig_str, msg, sid_start)
+        sid_start += 1
+        rule_file.writelines(tcp_rule)
+        rule_file.writelines(udp_rule)
 rule_file.flush()
 rule_file.close()
 
